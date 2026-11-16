@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Ejercicio 2 - Nombre más largo</h1>
+
+    <form method="POST">
+        <label>Nombre 1:</label>
+        <input type="text" name="nombre1" required>
+        <br><br>
+
+        <label>Nombre 2:</label>
+        <input type="text" name="nombre2" required>
+        <br><br>
+
+        <label>Nombre 3:</label>
+        <input type="text" name="nombre3" required>
+        <br><br>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if nombre_largo is not none %}
+        <h2>Resultado</h2>
+        <p>Nombre más largo: {{ nombre_largo }}</p>
+        <p>Cantidad de caracteres: {{ cantidad }}</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('inicio') }}">Volver al menú</a>
+
+</body>
+</html>
